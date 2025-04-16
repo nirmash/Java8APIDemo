@@ -1,0 +1,22 @@
+### Health Check
+GET http://localhost:8080/api/health
+Accept: application/json
+
+### Create a new message
+POST http://localhost:8080/api/book
+Content-Type: application/json
+Accept: application/json
+
+{
+  "content": "This is a test message",
+  "author": "Test User"
+}
+
+### Get a message by ID
+# Replace {id} with an actual message ID returned from the create message request
+GET http://localhost:8080/api/message/07de9f50-0287-43e5-8a1f-4671adf550f8
+Accept: application/json
+
+### Example with a specific ID (update with your actual ID)
+# GET http://localhost:8080/api/message/123e4567-e89b-12d3-a456-426614174000
+# Accept: application/json

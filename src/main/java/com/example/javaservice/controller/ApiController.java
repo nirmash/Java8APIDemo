@@ -27,7 +27,7 @@ public class ApiController {
         return ResponseEntity.ok(response);
     }
 
-    @GetMapping("/message/{id}")
+    @GetMapping("/booking/{id}")
     public ResponseEntity<Message> getMessage(@PathVariable String id) {
         if (messages.containsKey(id)) {
             return ResponseEntity.ok(messages.get(id));
@@ -36,13 +36,13 @@ public class ApiController {
         }
     }
 
-    @PostMapping("/message")
+    @PostMapping("/book")
     public ResponseEntity<Response> createMessage(@RequestBody Message message) {
         String id = UUID.randomUUID().toString();
         message.setId(id);
         messages.put(id, message);
         
-        Response response = new Response("Message created with ID: " + id);
+        Response response = new Response("Booking created with ID: " + id);
         return ResponseEntity.ok(response);
     }
 }
